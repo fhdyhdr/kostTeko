@@ -1,0 +1,62 @@
+:root[style*="--device: desktop"] .popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Pastikan z-index lebih tinggi dari konten lain */
+  overflow: hidden;
+}
+
+:root[style*="--device: desktop"] .popup .popup-content {
+  position: relative;
+  background: #29292c;
+  color: #EEEEEE;
+  padding: 15px;
+  border-radius: 10px;
+  width: 80%; /* Lebar popup, bisa disesuaikan */
+  max-width: 600px;
+  height: auto; /* Sesuaikan tinggi otomatis */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1001; /* Popup content di atas overlay */
+  transform: translateY(100%);
+  transition: transform 0.5s ease-in-out;
+}
+
+:root[style*="--device: desktop"] .popup.active .popup-content {
+  transform: translateY(0); /* Geser masuk dari bawah */
+}
+
+:root[style*="--device: desktop"] .popup .popup-overlay {
+  position: fixed; /* Tetap fixed agar menutupi seluruh viewport */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.728); /* Overlay transparan */
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+  z-index: 999; /* Pastikan di belakang popup content */
+}
+
+:root[style*="--device: desktop"] .popup.active .popup-overlay {
+  opacity: 1; /* Fade in overlay */
+}
+
+:root[style*="--device: desktop"] .popup .fa-xmark {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: transparent;
+  border: none;
+  color: #EEEEEE;
+  font-size: 30px; /* Ukuran tombol close */
+  cursor: pointer;
+  z-index: 1002; /* Tombol close di atas popup */
+}

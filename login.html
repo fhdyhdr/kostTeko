@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>CodePen - Elegant Login Form with ParticlesJS (with form validation and show/hide password)</title>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/typicons/2.0.9/typicons.min.css'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css'>
+<link rel="stylesheet" href="./login.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<body id="particles-js"></body>
+<div class="animated bounceInDown">
+  <div class="container">
+    <span class="error animated tada" id="msg"></span>
+    <form name="form1" class="box" onsubmit="return checkStuff()">
+      <h4>Admin <span>Dashboard</span></h4>
+      <h5>Login to your account.</h5>
+        <input type="text" name="email" placeholder="Email" autocomplete="off">
+        <i class="typcn typcn-eye" id="eye"></i>
+        <input type="password" name="password" placeholder="Passsword" id="pwd" autocomplete="off">
+      
+        <a href="#" class="forgetpass">Forget Password?</a>
+        <input onclick="window.location.href='index.html';" type="submit" value="Sign in" class="btn1">
+      </form>
+        <a href="#" class="dnthave">Dont have an account? <span class="signuptitle" onclick="window.location.href='signup.html';">Sign up</span></a>
+  </div> 
+     
+</div>
+<!-- partial -->
+  <script src='https://cldup.com/S6Ptkwu_qA.js'></script><script  src="./login.js"></script>
+
+</body>
+</html>
